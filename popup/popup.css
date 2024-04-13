@@ -1,52 +1,63 @@
 @charset "UTF-8";
 
 :root {
-/*
-  Defined Variable CSS Colors in popup.js
+  /*light-scheme(defualt)*/
+  --light-bg-color: #FFFFFF;
+  --light-text-color: #737373;
 
-  "--addressbar-bg-color" = the address bar bg color 
-  "--addressbar-text-color" = the icon/url color inside the address bar, (non-focused), 
-  FAILED TO WORK"--toolbar-text-color" = the icon/text color of the toolbar
+  --light-input-bg-color: #F2F2F2;
+  --light-input-text-color: #4C4C4C;
+  --light-input-border-color: none;
 
+  --light-button-bg-color: #E9E9E9;
+  --light-button-text-color: #4A4A4A;
+  --light-button-border-color: #E3E3E3;
+  --light-button-hover-color: #dedede;
 
+  /*dark-scheme*/
+  --dark-bg-color: #191C1F;
+  --dark-text-color: #999C9F;
 
-*/
+  --dark-input-bg-color: #0C0F12;
+  --dark-input-text-color: #DBDBDC;
+  --dark-input-border-color: none;
 
-/*DOES NOT WQOTK WELL SINCE THEME IS UN UNIFORM*/
+  --dark-button-bg-color: #555757;
+  --dark-button-text-color: #FFFFFF;
+  --dark-button-border-color: #8D8D8D;
+  --dark-button-hover-color: #616363;
+
+  /*constant*/
+  --border-color: #BDBDBD;
+  /*outer border for the body*/
+
+  --qr-bg-color: #F2F2F2;
+
 }
 
-.p-btn {
-  background: red;
-  border-radius: 6px;
-  color: purple;
-  font-family: "Inter", sans-serif;
-  margin: auto;
-  padding: .2px 10px;
-  font-size: 1rem;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0px 0.5px 1px 0.5px rgba(0, 0, 0, .1);
-  user-select: none;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
 
-body {
-  padding: 0px;
+
+body.light-mode {
+  padding: 2px 0px 6px 0px;
   margin: 0px;
 
   border-radius: 6px;
   border-width: medium;
-  border-color: #D0C9D1;
+  border-color: var(--border-color);
+  outline: none;
 
   width: auto;
   height: auto;
 
-  background-color: var(--toolbar-bg-color);
+  background-color: var(--light-bg-color);
 }
 
-#popup-body {
-  margin: 2px 0px 6px 0px;
+body.dark-mode {
+  background-color: var(--dark-bg-color);
+}
+
+.popup-body {
+  margin: 0;
   padding: 0;
 
   display: flex;
@@ -55,50 +66,59 @@ body {
   align-items: center;
 
   width: 220px;
-  height: 320px;
+  height: 300px;
 
   border-radius: 6px;
   border-width: 0px;
 
-  background-color: var(--toolbar-bg-color);
+  background-color: var(--light-bg-color);
 }
 
-#Title {
+/* Attempted but does not work
+
+@media (prefers-color-scheme: dark) {
+  .popup-body{
+    background-color: var(--dark-bg-color) !important;
+  }
+}
+*/
+
+.title {
   font-weight: thin;
+  font-size: 0.875em;
+
   margin: 0;
   padding: 0;
-  color: var(--bkmrk-text-color);
+
+  color: var(--light-text-color);
 }
 
-#inputBar {
-  width: 194px;
-  background-color: var(--toolbar-field-color);
-  /*border-width: thin;
-  border-color: var(--toolbar-field-border-color);*/
-  color: var(--addressbar-text-color);
-  padding-top: 2px;
-  padding-bottom: 2px;
-  border: none;
-}
-
-#inputBar:focus {
-  border: none;
-  outline: none;
-  border-width: 0;
-
-}
-
-#qrcode {
+.qr-code {
   width: 200px;
   height: 200px;
 
   margin: 0;
   padding: 0;
 
-  background-color: orange;
+  background-color: var(--qr-bg-color);
 }
 
+.inputBar {
+  width: 194px;
+  background-color: var(--light-input-bg-color);
+  /*border-width: thin;
+  border-color: var(--toolbar-field-border-color);*/
+  color: var(--light-input-text-color);
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border: none;
+}
 
+.inputBar:focus {
+  border: none;
+  outline: none;
+  border-width: 0;
+}
 
 #btn-group {
   display: flex;
@@ -108,23 +128,43 @@ body {
   margin: 0;
   padding: 0;
 
-  width: 80%;
+  width: 200px;
 }
 
 .btn {
   font-size: 0.875em;
-  padding: 6px 12px;
-  /* Adjust padding to make the button smaller */
-  font-size: 14px;
-  /* var(--button-bg-color);  Adjust font size to match the smaller button */
-  border-color: var(--bkmrk-text-color);
-  color: var(--bkmrk-text-color);
-  border-width: thin;
-  border-radius: 5px;
+  text-align: center;
+
+
+  padding: 0.25em 0.5em;
+
   cursor: pointer;
-  background-color: var(--toolbar-bg-color);
+
+  border-width: thin;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: var(--light-button-border-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--light-button-bg-color);
+  color: #4A4A4A;
+
+  transition: background-color 0.3s ease;
+  /* Exclude transform from the transition */
+  transition: transform 0.3s ease;
 }
 
 .btn:hover {
-  background-color: var(--button-bg-hover-color);
+  background-color: var(--light-button-hover-color);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.96);
 }

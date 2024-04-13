@@ -28,7 +28,7 @@
       "19": "icons/border-48.png",
       "38": "icons/border-48.png"
     },
-    "default_title": "Whereami?",
+    "default_title": "LinkQR",
     "default_popup": "popup/popup.html"
   }
 }
