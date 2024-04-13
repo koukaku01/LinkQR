@@ -1,19 +1,32 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" name="viewport"/>
-    <link rel="stylesheet" href="popup.css" />
-    <script src="popup.js"></script>
-  </head>
 
-  <body>
-    <div class="popup-body">
-      <p class="title">Scan QR code</p>
-      <div class="qr-code"></div>
-      <input class="inputBar" type="text" value="https://google.com"/>
-      <div id="btn-group">
-        <button class="btn">Copy</button>
-        <button class="btn">Download</button>
+<head>
+  <meta charset="utf-8" name="viewport" />
+  <title>LinkQR</title>
+  <link rel="stylesheet" href="popup.css" />
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <div class="popup-body">
+    <p class="title">Scan QR code</p>
+
+    <div class="qr"></div>
+    <input class="inputbar" type="text" placeholder="QR Text"/><br />
+
+    <div id="btn-group">
+      <!-- <button class="btn">Copy</button>-->
+      <div class="actions">
+        <button class="btn">
+          <a download="qr.png">Download PNG</a>
+        </button>
       </div>
-  </body>
+    </div>
+
+  </div>
+  <script src="qrcode.min.js"></script>
+	<script src="app.js"></script>
+</body>
+
 </html>

@@ -2,42 +2,45 @@
 
 :root {
   /*light-scheme(defualt)*/
-  --light-bg-color: #FFFFFF;
-  --light-text-color: #737373;
+  --bg-color: #FFFFFF;
+  --text-color: #737373;
 
-  --light-input-bg-color: #F2F2F2;
-  --light-input-text-color: #4C4C4C;
-  --light-input-border-color: none;
+  --input-bg-color: #F2F2F2;
+  --input-text-color: #4C4C4C;
+  --input-border-color: none;
 
-  --light-button-bg-color: #E9E9E9;
-  --light-button-text-color: #4A4A4A;
-  --light-button-border-color: #E3E3E3;
-  --light-button-hover-color: #dedede;
+  --button-bg-color: #E9E9E9;
+  --button-text-color: #4A4A4A;
+  --button-border-color: #E3E3E3;
+  --button-hover-color: #dedede;
 
-  /*dark-scheme*/
-  --dark-bg-color: #191C1F;
-  --dark-text-color: #999C9F;
-
-  --dark-input-bg-color: #0C0F12;
-  --dark-input-text-color: #DBDBDC;
-  --dark-input-border-color: none;
-
-  --dark-button-bg-color: #555757;
-  --dark-button-text-color: #FFFFFF;
-  --dark-button-border-color: #8D8D8D;
-  --dark-button-hover-color: #616363;
 
   /*constant*/
   --border-color: #BDBDBD;
   /*outer border for the body*/
 
   --qr-bg-color: #F2F2F2;
+}
 
+@MEDIAA (prefers-color-scheme: dark) {
+  :root {   /*dark-scheme*/
+    --bg-color: #191C1F;
+    --text-color: #999C9F;
+  
+    --input-bg-color: #0C0F12;
+    --input-text-color: #DBDBDC;
+    --input-border-color: none;
+  
+    --button-bg-color: #555757;
+    --button-text-color: #FFFFFF;
+    --button-border-color: #8D8D8D;
+    --button-hover-color: #616363;  
+  }
 }
 
 
 
-body.light-mode {
+body{
   padding: 2px 0px 6px 0px;
   margin: 0px;
 
@@ -49,11 +52,7 @@ body.light-mode {
   width: auto;
   height: auto;
 
-  background-color: var(--light-bg-color);
-}
-
-body.dark-mode {
-  background-color: var(--dark-bg-color);
+  background-color: var(--bg-color);
 }
 
 .popup-body {
@@ -71,17 +70,8 @@ body.dark-mode {
   border-radius: 6px;
   border-width: 0px;
 
-  background-color: var(--light-bg-color);
+  background-color: var(--bg-color);
 }
-
-/* Attempted but does not work
-
-@media (prefers-color-scheme: dark) {
-  .popup-body{
-    background-color: var(--dark-bg-color) !important;
-  }
-}
-*/
 
 .title {
   font-weight: thin;
@@ -90,34 +80,40 @@ body.dark-mode {
   margin: 0;
   padding: 0;
 
-  color: var(--light-text-color);
+  color: var(--text-color);
 }
 
-.qr-code {
+.qr {
   width: 200px;
   height: 200px;
 
   margin: 0;
   padding: 0;
 
-  background-color: var(--qr-bg-color);
+  background-color: none;
 }
 
-.inputBar {
+.inputbar {
   width: 194px;
-  background-color: var(--light-input-bg-color);
-  /*border-width: thin;
-  border-color: var(--toolbar-field-border-color);*/
-  color: var(--light-input-text-color);
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   border: none;
 }
 
-.inputBar:focus {
+.inputbar:focus {
   border: none;
   outline: none;
   border-width: 0;
+}
+
+.actions a {
+  text-decoration: none;
+}
+
+.actions a:focus-visible {
+  box-shadow: none;
 }
 
 #btn-group {
@@ -143,14 +139,14 @@ body.dark-mode {
   border-width: thin;
   border-style: solid;
   border-radius: 5px;
-  border-color: var(--light-button-border-color);
+  border-color: var(--button-border-color);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: var(--light-button-bg-color);
-  color: #4A4A4A;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
 
   transition: background-color 0.3s ease;
   /* Exclude transform from the transition */
@@ -158,7 +154,7 @@ body.dark-mode {
 }
 
 .btn:hover {
-  background-color: var(--light-button-hover-color);
+  background-color: var(--button-hover-color);
 }
 
 .btn:focus {
