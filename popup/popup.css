@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+:root {
+/*
+  Defined Variable CSS Colors in popup.js
+
+  "--addressbar-bg-color" = the address bar bg color 
+  "--addressbar-text-color" = the icon/url color inside the address bar, (non-focused), 
+  FAILED TO WORK"--toolbar-text-color" = the icon/text color of the toolbar
+
+
+
+*/
+
+/*DOES NOT WQOTK WELL SINCE THEME IS UN UNIFORM*/
+}
+
+.p-btn {
+  background: red;
+  border-radius: 6px;
+  color: purple;
+  font-family: "Inter", sans-serif;
+  margin: auto;
+  padding: .2px 10px;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0px 0.5px 1px 0.5px rgba(0, 0, 0, .1);
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+
+  border-radius: 6px;
+  border-width: medium;
+  border-color: #D0C9D1;
+
+  width: auto;
+  height: auto;
+
+  background-color: var(--toolbar-bg-color);
+}
+
+#popup-body {
+  margin: 2px 0px 6px 0px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 220px;
+  height: 320px;
+
+  border-radius: 6px;
+  border-width: 0px;
+
+  background-color: var(--toolbar-bg-color);
+}
+
+#Title {
+  font-weight: thin;
+  margin: 0;
+  padding: 0;
+  color: var(--bkmrk-text-color);
+}
+
+#inputBar {
+  width: 194px;
+  background-color: var(--toolbar-field-color);
+  /*border-width: thin;
+  border-color: var(--toolbar-field-border-color);*/
+  color: var(--addressbar-text-color);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border: none;
+}
+
+#inputBar:focus {
+  border: none;
+  outline: none;
+  border-width: 0;
+
+}
+
+#qrcode {
+  width: 200px;
+  height: 200px;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: orange;
+}
+
+
+
+#btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 0;
+
+  width: 80%;
+}
+
+.btn {
+  font-size: 0.875em;
+  padding: 6px 12px;
+  /* Adjust padding to make the button smaller */
+  font-size: 14px;
+  /* var(--button-bg-color);  Adjust font size to match the smaller button */
+  border-color: var(--bkmrk-text-color);
+  color: var(--bkmrk-text-color);
+  border-width: thin;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--toolbar-bg-color);
+}
+
+.btn:hover {
+  background-color: var(--button-bg-hover-color);
+}

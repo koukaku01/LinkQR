@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "LinkQR",
+  "version": "0.1",
+
+  "description": "Convert web links into QR codes instantly with a single click. Easily copy or download the QR code.",
+  "homepage_url": "https://github.com/xke00/linkqr/main",
+  "icons": {
+    "48": "icons/border-48.png",
+    "96": "icons/border-48.png"
+  },
+
+  "permissions": [
+    "menus",
+    "contextMenus",
+    "activeTab",
+    "tabs",
+    "theme"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "page_action": {
+    "default_icon": {
+      "19": "icons/border-48.png",
+      "38": "icons/border-48.png"
+    },
+    "default_title": "Whereami?",
+    "default_popup": "popup/popup.html"
+  }
+}
