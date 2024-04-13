@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "LinkQR",
-  "version": "0.2",
+  "version": "0.2.1",
 
   "description": "Convert web links into QR codes instantly with a single click. Easily copy or download the QR code.",
   "homepage_url": "https://github.com/xke00/linkqr/main",

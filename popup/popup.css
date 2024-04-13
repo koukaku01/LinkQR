@@ -22,7 +22,7 @@
   --qr-bg-color: #F2F2F2;
 }
 
-@MEDIAA (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {   /*dark-scheme*/
     --bg-color: #191C1F;
     --text-color: #999C9F;
