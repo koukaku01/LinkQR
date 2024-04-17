@@ -8,8 +8,8 @@ A firefox extension that convert web links into QR codes instantly with a single
 - [x] Option to download QR Code as PNG
 - [x] offline support
 - [x] automatic light/dark mode
-- [] copy QR code
-- [] right-click context menu to generate QR code
+- [ ] copy QR code
+- [ ] right-click context menu to generate QR code
 
 ## Acknowledgements
 
