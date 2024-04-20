@@ -1,6 +1,6 @@
 # LinkQR
 
-A firefox extension that convert web links into QR codes instantly with a single click. Easily copy or download the QR code.
+A firefox extension that convert web links into QR codes instantly with a single click. Easily copy or download the QR code into PNG/SVG.
 
 ## Features
 
@@ -8,7 +8,7 @@ A firefox extension that convert web links into QR codes instantly with a single
 - [x] Option to download QR Code as PNG, SVG
 - [x] offline support
 - [x] automatic light/dark mode
-- [ ] copy QR code
+- [x] copy QR code
 - [ ] right-click context menu to generate QR code
 
 ## Acknowledgements
