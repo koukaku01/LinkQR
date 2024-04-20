@@ -12,20 +12,28 @@
     <p class="title">Scan QR code</p>
 
     <div class="qr"></div>
-    <input class="inputbar" type="text" placeholder="QR Text"/><br />
+    <input class="inputbar" type="text" placeholder="QR Text" /><br />
 
     <div id="btn-group">
-      <!-- <button class="btn">Copy</button>-->
+
       <div class="actions">
+
         <button class="btn">
-          <a download="qr.png">Download PNG</a>
+          <a class="downloading" download="qr.png" style="color: var(--button-text-color);">
+            Download PNG</a>
         </button>
+
+        <button class="btn">
+          <a class="downloading" download="qr.svg" style="color: var(--button-text-color);">
+            Download SVG</a>
+        </button>
+
       </div>
+
     </div>
 
-  </div>
   <script src="qrcode.min.js"></script>
-	<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
