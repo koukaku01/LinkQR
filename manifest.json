@@ -3,7 +3,7 @@
   "name": "LinkQR",
   "version": "0.4.0",
 
-  "description": "Convert web links into QR codes instantly with a single click. Easily copy or download the QR code.",
+  "description": "Convert web links into QR codes instantly with a single click from the address bar. Easily copy or download the QR code.",
   "homepage_url": "https://github.com/xke00/linkqr/main",
   "icons": {
     "48": "icons/extension-icon-48.png",
