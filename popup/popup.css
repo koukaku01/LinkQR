@@ -38,10 +38,8 @@
   }
 }
 
-
-
 body{
-  padding: 2px 0px 6px 0px;
+  padding: 4px;
   margin: 0px;
 
   border-radius: 6px;
@@ -51,6 +49,8 @@ body{
 
   width: auto;
   height: auto;
+
+  font-family: Arial, sans-serif;
 
   background-color: var(--bg-color);
 }
@@ -64,8 +64,8 @@ body{
   justify-content: space-between;
   align-items: center;
 
-  width: 220px;
-  height: 310px;
+  width: 210px;
+  height: 300px;
 
   border-radius: 6px;
   border-width: 0px;
@@ -75,7 +75,7 @@ body{
 
 .title {
   font-weight: thin;
-  font-size: 0.875em;
+  font-size: 1em;
 
   margin: 0;
   padding: 0;
@@ -97,10 +97,14 @@ body{
   width: 204px;
   background-color: var(--input-bg-color);
   color: var(--input-text-color);
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
   padding-left: 0.25em;
-  border: none;
+
+  border-width: thin;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: var(--button-border-color);
 }
 
 .inputbar:focus {
@@ -125,7 +129,7 @@ body{
   margin: 0;
   padding: 0;
 
-  width: 200px;
+  width: 210px;
 }
 
 .btn {
@@ -133,7 +137,8 @@ body{
   text-align: center;
 
 
-  padding: 0.25em 0.5em;
+  padding: 0.25em 0.25em;
+  margin: 0;
 
   cursor: pointer;
 
@@ -166,3 +171,26 @@ body{
   transform: scale(0.96);
 }
 
+/* CSS to style the SVG */
+.download-icon {
+  width: 16px; /* Adjust the size as needed */
+  height: 16px; /* Adjust the size as needed */
+  color: var(--button-text-color); /* Set the color of the SVG */
+  margin: 0;
+  padding-right: 0.25em;
+}
+
+.copy-icon {
+  width: 16px; /* Adjust the size as needed */
+  height: 16px; /* Adjust the size as needed */
+  color: var(--button-text-color); /* Set the color of the SVG */
+  margin: 0;
+  padding: 0.25em;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6px;
+}

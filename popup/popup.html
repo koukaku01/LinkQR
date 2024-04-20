@@ -1,10 +1,11 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" name="viewport" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LinkQR</title>
-  <link rel="stylesheet" href="popup.css" />
+  <link rel="stylesheet" href="popup.css">
 </head>
 
 <body>
@@ -12,25 +13,47 @@
     <p class="title">Scan QR code</p>
 
     <div class="qr"></div>
-    <input class="inputbar" type="text" placeholder="QR Text" /><br />
+    <input class="inputbar" type="text" placeholder="QR Text"><br>
 
     <div id="btn-group">
-
       <div class="actions">
-
         <button class="btn">
-          <a class="downloading" download="qr.png" style="color: var(--button-text-color);">
-            Download PNG</a>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-download download-icon">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+
+          <a download="qr.png" style="color: var(--button-text-color);">
+            PNG
+          </a>
         </button>
 
         <button class="btn">
-          <a class="downloading" download="qr.svg" style="color: var(--button-text-color);">
-            Download SVG</a>
-        </button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-download download-icon">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
 
+          <a download="qr.svg" style="color: var(--button-text-color);">
+            SVG
+          </a>
+        </button>
       </div>
 
+      <button class="btn buttonCopy">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+          class="copy-icon"></path>
+        </svg>
+      </button>
     </div>
+  </div>
 
   <script src="qrcode.min.js"></script>
   <script src="app.js"></script>
