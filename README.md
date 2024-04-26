@@ -1,6 +1,17 @@
 # LinkQR
 
-A Firefox extension that instantly converts web links into QR codes with a single click. Easily copy or download QR codes in PNG/SVG format for seamless sharing.
+LinkQR is a Firefox extension that simplifies the process of converting web links into QR codes with just a single click. It empowers users to effortlessly copy or download QR codes in PNG/SVG format for convenient sharing.
+
+## Table of Contents
+
+- [Features](#features)
+- [Install](#install)
+- [Usage](#usage)
+	- [Browser address bar button](#browser-address-bar-button)
+- [Maintainers](#maintainers)
+- [Contributing](#contributing)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ## Features
 
@@ -11,6 +22,18 @@ A Firefox extension that instantly converts web links into QR codes with a singl
 - [x] Automatically adapts to user's Firefox theme (light or dark)
 - [x] Ability to copy QR code as PNG
 - [ ] Right-click context menu to generate QR code
+
+## Install
+
+[![Get the add-on at the Firefox Add-ons site](get-the-add-on.png)](https://addons.mozilla.org/)<br>
+Available on the [Firefox Add-ons site](https://addons.mozilla.org/)
+
+
+## Usage
+
+### Browser address bar button
+
+Click the button located to the right of the browser's address bar.
 
 ## Maintainers
 
@@ -29,6 +52,6 @@ LinkQR follows the [Contributor Covenant](http://contributor-covenant.org/versio
 
 ## License
 
-Copyright (c) 2024 [xKe00](https://github.com/xKe00)
+[LinkQR](https://github.com/xKe00/LinkQR) Copyright &#169; 2024 [xKe00](https://github.com/xKe00).
 
 This project is licensed under the GNU General Public License v3.0 - see [LICENSE](LICENSE) for more information.
