@@ -1,4 +1,4 @@
-<img src="icons/ext-icon-64.png" align="center" alt="LinkQR icon">
+<div align="center"><img src="icons/ext-icon-64.png" align="center" alt="LinkQR icon"></div>
 <h1 align="center">LinkQR</h1>
 	
 [![Extension Version](https://img.shields.io/badge/Version-0.5.0-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
