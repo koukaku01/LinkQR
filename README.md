@@ -1,4 +1,5 @@
-# LinkQR 
+# LinkQR
+
 [![Extension Version](https://img.shields.io/badge/Version-0.4.1-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 LinkQR is a Firefox extension that simplifies the process of converting web links into QR codes with just a single click. It empowers users to effortlessly copy or download QR codes in PNG/SVG format for convenient sharing.
