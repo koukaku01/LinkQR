@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center"> <!-- flex method does not work-->
     <img src="icons/ext-icon-64.png" alt="LinkQR icon">
     <h1>LinkQR</h1>
 	
