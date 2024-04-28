@@ -7,9 +7,9 @@
 
 LinkQR is a Firefox extension that simplifies the process of converting web links into QR codes with just a single click. It empowers users to effortlessly copy or download QR codes in PNG/SVG format for convenient sharing.
 
-<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-    <img src="assets/presentation-1.png" alt="Presentation 1" style="width: 500px;">
-    <img src="assets/presentation-2.png" alt="Presentation 2" style="width: 500px;">
+<div style="display: flex; flex-direction: column;">
+    <img src="assets/presentation-1.png" alt="Presentation 1" style="width: 100%;">
+    <img src="assets/presentation-2.png" alt="Presentation 2" style="width: 100%;">
 </div>
 
 ## Table of Contents
