@@ -26,7 +26,7 @@
   "page_action": {
     "default_icon": {
       "19": "icons/PA-icon-19.png",
-      "38": "icons/PA-icon-28.png"
+      "38": "icons/PA-icon-38.png"
     },
     "default_title": "LinkQR",
     "default_popup": "popup/popup.html"
