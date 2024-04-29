@@ -51,8 +51,7 @@ Click the button located to the right of the browser's address bar.
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/xKe00/LinkQR/issues
-/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/xKe00/LinkQR/issues/new) or submit PRs.
 
 LinkQR follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
 
