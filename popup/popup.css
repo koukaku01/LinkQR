@@ -2,49 +2,61 @@
 
 :root {
   /*light-scheme(defualt)*/
-  --bg-color: #FFFFFF;
-  --text-color: #737373;
+  --bg-primary-color: #FFFFFF;
+  --text-primary-color: rgba(0, 0, 0, 0.85);
 
-  --input-bg-color: #F2F2F2;
-  --input-text-color: #4C4C4C;
-  --input-border-color: none;
+  --input-bg-color: #ffffff;
+  --text-field-border-color: rgba(0, 0, 0, 0.30);
+  --text-field-focus-border-color: rgba(0, 122, 255, 0.50);
 
-  --button-bg-color: #E9E9E9;
-  --button-text-color: #4A4A4A;
-  --button-border-color: #E3E3E3;
-  --button-hover-color: #dedede;
+  --button-bg-color: #ffffff;
+  --button-text-color: rgba(0, 0, 0, 0.85);
+  --button-border-color: rgba(0, 0, 0, 0.30);
+  --button-hover-color: #D9D9D9;
 
+  --body-border-color: rgba(0, 0, 0, 0.06);
 
-  /*constant*/
-  --border-color: #BDBDBD;
-  /*outer border for the body*/
+  --qr-bg-color: #ffffff;
+  --qr-bg-border-color: rgba(0, 0, 0, 0.1);
 
-  --qr-bg-color: #F2F2F2;
+  /*shadows*/
+  --shadows-1: 0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.1), 0px -0.3px 2px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {   /*dark-scheme*/
-    --bg-color: #191C1F;
-    --text-color: #999C9F;
-  
-    --input-bg-color: #0C0F12;
-    --input-text-color: #DBDBDC;
-    --input-border-color: none;
-  
-    --button-bg-color: #555757;
-    --button-text-color: #FFFFFF;
-    --button-border-color: #8D8D8D;
-    --button-hover-color: #616363;  
+  :root {
+    /*dark-scheme*/
+    --bg-primary-color: #242424;
+    --text-primary-color: rgba(255, 255, 255, 0.85);
+
+    --input-bg-color: #242424;
+    --text-field-border-color: rgba(255, 255, 255, 0.3);
+    --text-field-focus-border-color: rgba(0, 122, 255, 0.90);
+
+    --button-bg-color: #242424;
+    --button-text-color: rgba(255, 255, 255, 0.85);
+    --button-border-color: rgba(255, 255, 255, 0.3);
+    --button-hover-color: #424242;
+
+    --body-border-color: rgba(255, 255, 255, 0.06);
+
+    --qr-bg-color: #ffffff;
+    --qr-bg-border-color: rgba(255, 255, 255, 0.1);
+
+    /*shadows*/
+
+    --shadows-1: 0px 0.5px 2.5px 0px rgba(255, 255, 255, 0.1), 0px -0.3px 2px 0px rgba(255, 255, 255, 0.3), 0px 0px 0px 0px rgba(255, 255, 255, 0.1);
   }
 }
 
-body{
-  padding: 4px;
+body {
+  padding: 10px;
   margin: 0px;
 
   border-radius: 6px;
-  border-width: medium;
-  border-color: var(--border-color);
+  border-width: 1px;
+  border-color: var(--body-border-color);
   outline: none;
 
   width: auto;
@@ -52,7 +64,7 @@ body{
 
   font-family: Arial, sans-serif;
 
-  background-color: var(--bg-color);
+  background-color: var(--bg-primary-color);
 }
 
 .popup-body {
@@ -64,13 +76,13 @@ body{
   justify-content: space-between;
   align-items: center;
 
-  width: 210px;
+  width: 218px;
   height: 300px;
 
   border-radius: 6px;
   border-width: 0px;
 
-  background-color: var(--bg-color);
+  background-color: var(--bg-primary-color);
 }
 
 .title {
@@ -80,37 +92,43 @@ body{
   margin: 0;
   padding: 0;
 
-  color: var(--text-color);
+  color: var(--text-primary-color);
 }
 
 .qr {
-  width: 200px;
-  height: 200px;
+  width: 202px;
+  height: 202px;
 
   margin: 0;
-  padding: 5px;
+  padding: 4px;
 
   background-color: var(--qr-bg-color);
+
+  border-width: 0.5px;
+  border-color: var(--qr-bg-border-color);
+  border-radius: 6px;
 }
 
 .inputbar {
-  width: 204px;
+  width: 202px;
   background-color: var(--input-bg-color);
-  color: var(--input-text-color);
+  color: var(--text-primary-color);
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   padding-left: 0.25em;
 
-  border-width: thin;
-  border-style: solid;
-  border-radius: 5px;
-  border-color: var(--button-border-color);
+  border-width: 0px;
+  border-radius: 6px;
+
+  margin-top: 4.5px;
 }
 
 .inputbar:focus {
-  border: none;
   outline: none;
-  border-width: 0;
+  border-width: 0px;
+  border-radius: 6px;
+
+  box-shadow: 0px 0px 0px 3px var(--text-field-focus-border-color);
 }
 
 .actions a {
@@ -118,7 +136,7 @@ body{
 }
 
 .actions a:focus-visible {
-  box-shadow: none;
+  text-decoration: none;
 }
 
 #btn-group {
@@ -133,19 +151,19 @@ body{
 }
 
 .btn {
-  font-size: 0.875em;
+  font-size: 0.75em;
   text-align: center;
 
+  height: 22px;
 
-  padding: 0.25em 0.25em;
+  padding: 0 0.5em;
   margin: 0;
 
   cursor: pointer;
 
-  border-width: thin;
+  border-width: 0px;
   border-style: solid;
-  border-radius: 5px;
-  border-color: var(--button-border-color);
+  border-radius: 6px;
 
   display: flex;
   align-items: center;
@@ -155,8 +173,6 @@ body{
   color: var(--button-text-color);
 
   transition: background-color 0.3s ease;
-  /* Exclude transform from the transition */
-  transition: transform 0.3s ease;
 }
 
 .btn:hover {
@@ -167,30 +183,31 @@ body{
   outline: none;
 }
 
-.btn:active {
-  transform: scale(0.96);
-}
 
 /* CSS to style the SVG */
 .download-icon {
-  width: 16px; /* Adjust the size as needed */
-  height: 16px; /* Adjust the size as needed */
-  color: var(--button-text-color); /* Set the color of the SVG */
+  height: 14px;
+  width: 14px;
+  color: var(--button-text-color);
+  /* Set the color of the SVG */
   margin: 0;
   padding-right: 0.25em;
 }
 
 .copy-icon {
-  width: 16px; /* Adjust the size as needed */
-  height: 16px; /* Adjust the size as needed */
-  color: var(--button-text-color); /* Set the color of the SVG */
+  color: var(--button-text-color);
+  /* Set the color of the SVG */
   margin: 0;
-  padding: 0.25em;
+  padding: 0;
 }
 
 .actions {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 6px;
+  gap: 9px;
+}
+
+.shadows-1 {
+  box-shadow: var(--shadows-1);
 }

@@ -4,7 +4,7 @@ const $qr = document.querySelector(".qr"); // Container for QR code display
 const $downloadPngBtn = document.getElementById("downloadPngBtn"); // PNG download button
 const $downloadSvgBtn = document.getElementById("downloadSvgBtn"); // SVG download button
 const $buttonCopy = document.querySelector(".buttonCopy"); // Button to copy QR code PNG image
-const SIZE = 800; // Size of the QR code
+const SIZE = 798; // Size of the QR code
 
 // Function to draw QR code
 function drawQr(text) {
