@@ -113,3 +113,19 @@ $text.addEventListener("input", function () {
 $text.addEventListener("focus", function () {
     this.select();
 });
+
+// This script disables the default zoom behavior in the popup body when the Ctrl key is pressed during scrolling
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the popup body element
+    var popupBody = document.querySelector('.popup-body');
+  
+    // Add a wheel event listener to the popup body
+    popupBody.addEventListener('wheel', function(event) {
+      // Check if the Ctrl key is pressed
+      if (event.ctrlKey) {
+        // If Ctrl key is pressed, prevent the default zoom behavior
+        event.preventDefault();
+      }
+    });
+  });
+  

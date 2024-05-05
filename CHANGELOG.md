@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+## [0.6.1] 2024-05-05
+- Added JavaScript snippet to disable default zoom behavior in popup body when Ctrl key is pressed during scrolling.
+
 ## [0.6.0] 2024-05-05
 
 ### Changed
