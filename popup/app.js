@@ -115,17 +115,30 @@ $text.addEventListener("focus", function () {
 });
 
 // This script disables the default zoom behavior in the popup body when the Ctrl key is pressed during scrolling
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Select the popup body element
     var popupBody = document.querySelector('.popup-body');
-  
+
     // Add a wheel event listener to the popup body
-    popupBody.addEventListener('wheel', function(event) {
-      // Check if the Ctrl key is pressed
-      if (event.ctrlKey) {
-        // If Ctrl key is pressed, prevent the default zoom behavior
-        event.preventDefault();
-      }
+    popupBody.addEventListener('wheel', function (event) {
+        // Check if the Ctrl key is pressed
+        if (event.ctrlKey) {
+            // If Ctrl key is pressed, prevent the default zoom behavior
+            event.preventDefault();
+        }
     });
-  });
-  
+});
+
+// Listen for console log event
+console.log = function (message) {
+    // Check if the log message indicates the successful copy operation
+    if (message === "QR code PNG image copied to clipboard successfully.") {
+        // Show the message div
+        document.getElementById('message').style.display = 'block';
+
+        // Hide the message after 3 seconds
+        setTimeout(function () {
+            document.getElementById('message').style.display = 'none';
+        }, 3000);
+    }
+};

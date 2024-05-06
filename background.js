@@ -1,5 +1,3 @@
-// background.js
-
 // Listen for tab updates
 browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     // Show the page action on every tab
@@ -14,6 +12,3 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       browser.pageAction.show(tab.id);
     });
   });
-
-  
-  
