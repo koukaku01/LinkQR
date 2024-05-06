@@ -19,6 +19,9 @@
   --qr-bg-color: #ffffff;
   --qr-bg-border-color: rgba(0, 0, 0, 0.1);
 
+  --message-success-color: #D8EEDC;
+  --message-success-icon-color: #017A40;
+
   /*shadows*/
   --shadows-1: 0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.1), 0px -0.3px 2px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 
@@ -43,6 +46,10 @@
 
     --qr-bg-color: #ffffff;
     --qr-bg-border-color: rgba(255, 255, 255, 0.1);
+
+    --message-success-color: #004725;
+    --message-success-icon-color: #4DBC87;
+
 
     /*shadows*/
 
@@ -201,6 +208,19 @@ body {
   padding: 0;
 }
 
+.success-icon {
+  color: var(--message-success-icon-color);
+  /* Set the color of the SVG */
+  position: absolute;
+  /* Position the icon absolutely */
+  top: 50%;
+  /* Align the icon vertically */
+  left: 50%;
+  /* Align the icon horizontally */
+  transform: translate(-50%, -50%);
+  /* Center the icon */
+}
+
 .actions {
   display: flex;
   flex-direction: row;
@@ -210,4 +230,23 @@ body {
 
 .shadows-1 {
   box-shadow: var(--shadows-1);
+}
+
+#message {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 41px;
+  transform: translateX(-50%);
+  background-color: var(--message-success-color);
+  padding: 0;
+  border-radius: 6px;
+  z-index: 9999;
+
+  align-items: center;
+
+  margin: 0;
+
+  height: 22px;
+  width: 22px;
 }

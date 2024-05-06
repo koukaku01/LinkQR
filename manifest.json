@@ -1,15 +1,13 @@
 {
   "manifest_version": 2,
   "name": "LinkQR",
-  "version": "0.6.1",
-
+  "version": "0.7.0",
   "description": "Converts web links into QR codes with a single click from the address bar. Copy or download QR codes in PNG/SVG format for sharing.",
   "homepage_url": "https://github.com/xke00/linkqr/main",
   "icons": {
     "32": "icons/ext-icon-32.png",
     "64": "icons/ext-icon-64.png"
   },
-
   "permissions": [
     "menus",
     "contextMenus",
@@ -17,12 +15,12 @@
     "tabs",
     "clipboardWrite"
   ],
-
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [
+      "background.js"
+    ],
     "persistent": false
   },
-
   "page_action": {
     "default_icon": {
       "19": "icons/PA-icon-19.png",
