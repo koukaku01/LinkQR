@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+## [0.8.0] 2024-05-06
+
+### Security
+
+- Fix security vulnerability by properly sanitizing SVG content assignment. This change ensures that SVG content is safely inserted into the DOM, mitigating potential security risks associated with dynamic content insertion.
+
 ## [0.7.0] 2024-05-06
 
 ### Added

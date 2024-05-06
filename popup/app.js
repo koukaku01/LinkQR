@@ -29,7 +29,18 @@ function drawQr(text) {
     const qr_svg = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">${qr}</svg>`;
 
     // Update SVG download link
-    $qr.innerHTML = qr_svg;
+
+   // Clear previous content of $qr
+while ($qr.firstChild) {
+    $qr.removeChild($qr.firstChild);
+}
+// Parse the SVG content into DOM nodes
+const parser = new DOMParser();
+const svgDoc = parser.parseFromString(qr_svg, "image/svg+xml");
+// Append the parsed SVG document to $qr
+$qr.appendChild(svgDoc.documentElement);
+
+
 
     // Update PNG download link
     $downloadPngBtn.addEventListener("click", function () {

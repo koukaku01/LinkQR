@@ -2,7 +2,7 @@
     <img src="icons/ext-icon-64.png" alt="LinkQR icon">
     <h1>LinkQR</h1>
 	
-[![Extension Version](https://img.shields.io/badge/Version-0.7.0-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![Extension Version](https://img.shields.io/badge/Version-0.8.0-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 [Changelog](./CHANGELOG.md)
 
