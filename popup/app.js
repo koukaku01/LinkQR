@@ -150,6 +150,6 @@ console.log = function (message) {
         // Hide the message after 3 seconds
         setTimeout(function () {
             document.getElementById('message').style.display = 'none';
-        }, 3000);
+        }, 1000);
     }
 };
