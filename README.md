@@ -38,8 +38,8 @@ LinkQR is a Firefox extension that simplifies the process of converting web link
 
 ## Install
 
-[![Get the add-on at the Firefox Add-ons site](assets/get-the-add-on.png)](https://addons.mozilla.org/)<br>
-Available on the [Firefox Add-ons site](https://addons.mozilla.org/link-qr)
+[![Get the add-on at the Firefox Add-ons site](assets/get-the-add-on.png)](https://addons.mozilla.org/firefox/addon/link-qr/)<br>
+Available on the [Firefox Add-ons site](https://addons.mozilla.org/firefox/addon/link-qr/)
 
 
 ## Usage
