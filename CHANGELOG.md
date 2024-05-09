@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Adjusted the success message timeout to 1 second.
 
+## [Development]
+
 ## [0.8.0] 2024-05-06
 
 ### Security
