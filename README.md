@@ -2,7 +2,7 @@
     <img src="icons/ext-icon-64.png" alt="LinkQR icon">
     <h1>LinkQR</h1>
 	
-[![Extension Version](https://img.shields.io/badge/Version-0.9.0-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![Extension Version](https://img.shields.io/badge/Version-0.10.0-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 [Changelog](./CHANGELOG.md)
 
@@ -22,6 +22,7 @@ LinkQR is a Firefox extension that simplifies the process of converting web link
 - [Usage](#usage)
 	- [Browser address bar button](#browser-address-bar-button)
     - [Right-clicked context menu](#right-clicked-context-menu)
+    - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
@@ -55,6 +56,10 @@ Click the button located to the right of the browser's address bar to open up th
 ### Right-clicked context menu
 
 Right-click anywhere on a webpage to access the context menu. You'll find an option labeled "Open LinkQR" in the menu. Click on it to open the popup containing the QR Code of the current webpage
+
+### Keyboard shortcuts
+
+- Alt+Q: Open the LinkQR Popup for current webpage.
 
 
 ## Maintainers
