@@ -12,3 +12,15 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       browser.pageAction.show(tab.id);
     });
   });
+
+// Create a browser menu item with id "open-popup"
+browser.menus.create({
+  id: "open-popup",                    // Unique identifier for the menu item
+  title: "Open LinkQR",                // Text displayed for the menu item
+  contexts: ["all"],                   // Menu item appears in all contexts
+});
+
+// Add a listener for when the menu item is clicked
+browser.menus.onClicked.addListener(() => {
+  browser.pageAction.openPopup();      // Open the page action popup
+});

@@ -30,15 +30,15 @@ function drawQr(text) {
 
     // Update SVG download link
 
-   // Clear previous content of $qr
-while ($qr.firstChild) {
-    $qr.removeChild($qr.firstChild);
-}
-// Parse the SVG content into DOM nodes
-const parser = new DOMParser();
-const svgDoc = parser.parseFromString(qr_svg, "image/svg+xml");
-// Append the parsed SVG document to $qr
-$qr.appendChild(svgDoc.documentElement);
+    // Clear previous content of $qr
+    while ($qr.firstChild) {
+        $qr.removeChild($qr.firstChild);
+    }
+    // Parse the SVG content into DOM nodes
+    const parser = new DOMParser();
+    const svgDoc = parser.parseFromString(qr_svg, "image/svg+xml");
+    // Append the parsed SVG document to $qr
+    $qr.appendChild(svgDoc.documentElement);
 
 
 
@@ -153,3 +153,45 @@ console.log = function (message) {
         }, 1000);
     }
 };
+
+
+///////////////////////////////////////////////////////////////////////////
+// Unused ShareMenu Event Listeners and Toggle Function
+///////////////////////////////////////////////////////////////////////////
+// Function to toggle the visibility of the ShareMenu
+// function toggleShareMenu() {
+//    var shareMenu = document.getElementById("shareMenu");
+//    var title = document.getElementById("title")
+//    if (shareMenu.style.display === "none" || shareMenu.style.display === "") {
+//        shareMenu.style.display = "block";
+//        title.style.display = "none";
+//
+//    } else {
+//        shareMenu.style.display = "none";
+//        title.style.display = "flex";
+//
+//    }
+//}
+//
+// Add event listener to hide the ShareMenu when clicking outside of it or on the body itself
+// document.addEventListener('click', function (event) {
+//    var shareMenu = document.getElementById("shareMenu");
+//    var title = document.getElementById("title")
+//
+//   var button = document.getElementById('buttonShare'); // Select button with ID "buttonShare"
+//   // Check if the clicked target is not the ShareMenu, its children, the button, or the body
+//    if (!shareMenu.contains(event.target) && event.target !== button) {
+//        shareMenu.style.display = "none"; // Hide the ShareMenu
+//       title.style.display = "flex";
+//
+//    }
+//});
+//
+// Find the button element
+//var buttonShare = document.getElementById("buttonShare");
+//
+// Add an event listener to toggle the share menu when the button is clicked
+//buttonShare.addEventListener("click", function (event) {
+//    toggleShareMenu();
+//    event.stopPropagation(); // Prevent the click event from bubbling up and triggering the document click event
+//});
