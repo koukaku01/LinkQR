@@ -35,7 +35,10 @@ LinkQR is a Firefox extension that simplifies the process of converting web link
 - [x] Offline support
 - [x] Automatically adapts to user's Firefox theme (light or dark)
 - [x] Ability to copy QR code as PNG
-- [ ] Right-click context menu to generate QR code
+- [x] Right-click context menu to generate QR code
+
+### TODO
+- [ ] Right-click context menu to generate QR code for links
 
 ## Install
 
