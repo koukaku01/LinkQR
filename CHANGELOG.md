@@ -5,9 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+**Note**: :star: indicate the version whcih has been published to the Firefox Add-ons site.
+
+<hr> 
+
 ## [Unreleased]
 
+<hr> 
+
 ## [Released]
+
+##  :star: [0.10.0] 2024-05-12
+
+### Added
+- Added keyboard shortcut to open the LinkQR Popup for the current webpage.
 
 ## [0.9.0] 2024-05-12
 
@@ -17,12 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - The menu item appears in all contexts for easy access.
   - Clicking the menu item opens the page action popup, enhancing user experience.
 
-## [0.8.1] 2024-05-06
+## :star: [0.8.1] 2024-05-06
 
 ### Changed
 - Adjusted the success message timeout to 1 second.
-
-## [Development]
 
 ## [0.8.0] 2024-05-06
 
