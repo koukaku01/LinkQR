@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-
 ## [Released]
+
+## [0.9.0] 2024-05-12
+
+### Added
+- Browser menu item
+  - Implemented a browser menu item with the title "Open LinkQR" to facilitate opening LinkQR.
+  - The menu item appears in all contexts for easy access.
+  - Clicking the menu item opens the page action popup, enhancing user experience.
 
 ## [0.8.1] 2024-05-06
 
