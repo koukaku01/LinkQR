@@ -1,0 +1,11 @@
+{
+    "extName": {
+      "message": "СсылкаQR"
+    },
+    "extDesc": {
+      "message": "Преобразует веб-ссылки в QR-коды с помощью LinkQR"
+    },
+    "commandOpenPopup": {
+      "message": "Открыть всплывающее окно LinkQR"
+    }
+  }

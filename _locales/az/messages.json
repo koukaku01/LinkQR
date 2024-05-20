@@ -1,0 +1,11 @@
+{
+  "extName": {
+    "message": "LinkQR"
+  },
+  "extDesc": {
+    "message": "LinkQR ilə veb bağlantılarını QR kodlarına çevirir"
+  },
+  "commandOpenPopup": {
+    "message": "LinkQR popup açın"
+  }
+}
