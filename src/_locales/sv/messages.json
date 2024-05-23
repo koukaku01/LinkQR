@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Konverterar webblänkar till QR-koder med LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Öppna LinkQR-popupen"
+    },
+    "popup_title": {
+        "message": "Skanna QR kod"
+    }
+}

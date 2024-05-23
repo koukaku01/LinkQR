@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR |"
+    },
+    "extDesc": {
+        "message": "ୱେବ୍ ଲିଙ୍କ୍ କୁ QR କୋଡ୍ ସହିତ LinkQR ସହିତ ରୂପାନ୍ତର କରେ |"
+    },
+    "commandOpenPopup": {
+        "message": "LinkQR ପପ୍ଅପ୍ ଖୋଲନ୍ତୁ |"
+    },
+    "popup_title": {
+        "message": "QR କୋଡ୍ ସ୍କାନ୍ କରନ୍ତୁ |"
+      }
+}

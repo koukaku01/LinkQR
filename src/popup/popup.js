@@ -154,44 +154,17 @@ console.log = function (message) {
     }
 };
 
+// Select all elements with the data-locale attribute
+document.querySelectorAll('[data-locale]').forEach(elem => {
+    // Get the message key from the data-locale attribute
+    let messageKey = elem.dataset.locale;
 
-///////////////////////////////////////////////////////////////////////////
-// Unused ShareMenu Event Listeners and Toggle Function
-///////////////////////////////////////////////////////////////////////////
-// Function to toggle the visibility of the ShareMenu
-// function toggleShareMenu() {
-//    var shareMenu = document.getElementById("shareMenu");
-//    var title = document.getElementById("title")
-//    if (shareMenu.style.display === "none" || shareMenu.style.display === "") {
-//        shareMenu.style.display = "block";
-//        title.style.display = "none";
-//
-//    } else {
-//        shareMenu.style.display = "none";
-//        title.style.display = "flex";
-//
-//    }
-//}
-//
-// Add event listener to hide the ShareMenu when clicking outside of it or on the body itself
-// document.addEventListener('click', function (event) {
-//    var shareMenu = document.getElementById("shareMenu");
-//    var title = document.getElementById("title")
-//
-//   var button = document.getElementById('buttonShare'); // Select button with ID "buttonShare"
-//   // Check if the clicked target is not the ShareMenu, its children, the button, or the body
-//    if (!shareMenu.contains(event.target) && event.target !== button) {
-//        shareMenu.style.display = "none"; // Hide the ShareMenu
-//       title.style.display = "flex";
-//
-//    }
-//});
-//
-// Find the button element
-//var buttonShare = document.getElementById("buttonShare");
-//
-// Add an event listener to toggle the share menu when the button is clicked
-//buttonShare.addEventListener("click", function (event) {
-//    toggleShareMenu();
-//    event.stopPropagation(); // Prevent the click event from bubbling up and triggering the document click event
-//});
+    // Retrieve the localized message using the message key
+    let translatedText = browser.i18n.getMessage(messageKey);
+
+    // If a localized message is found, set it as the element's inner text
+    if (translatedText) {
+        elem.innerText = translatedText;
+    }
+});
+

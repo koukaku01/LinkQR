@@ -1,0 +1,14 @@
+{
+    "extName": {
+      "message": "LinkQR"
+    },
+    "extDesc": {
+      "message": "A LinkQR segítségével a webes hivatkozásokat QR-kódokká alakítja"
+    },
+    "commandOpenPopup": {
+      "message": "Nyissa meg a LinkQR felugró ablakot"
+    },
+    "popup_title": {
+      "message": "QR kód beolvasása"
+    }
+  }

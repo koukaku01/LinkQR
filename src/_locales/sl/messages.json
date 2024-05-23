@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Pretvori spletne povezave v kode QR z LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Odprite pojavno okno LinkQR"
+    },
+    "popup_title": {
+        "message": "Skenirajte kodo QR"
+    }
+}

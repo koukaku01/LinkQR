@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Convertește linkurile web în coduri QR cu LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Deschideți pop-up LinkQR"
+    },
+    "popup_title": {
+        "message": "Scanați codul QR"
+    }
+}

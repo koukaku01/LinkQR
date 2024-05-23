@@ -9,33 +9,11 @@
 </head>
 
 <body>
-  <!-- Unused ShareMenu HTML Content -->
-  <!--<div id="shareMenu" class="shadows-1">
-    <ul>
-      <li class="list-item" id="share-to-mail">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icons-options">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-        Share via Mail
-      </li>
-      <li class="list-item">
-        <svg width="16" height="16" class="icons-options" xmlns="http://www.w3.org/2000/svg"
-          shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality"
-          fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 509.64">
-          <rect width="512" height="509.64" rx="115.61" ry="115.61" />
-          <path fill="#fff" fill-rule="nonzero"
-            d="M323.74 148.35h36.12l-78.91 90.2 92.83 122.73h-72.69l-56.93-74.43-65.15 74.43h-36.14l84.4-96.47-89.05-116.46h74.53l51.46 68.04 59.53-68.04zm-12.68 191.31h20.02l-129.2-170.82H180.4l130.66 170.82z" />
-        </svg>
-        Share on X
-      </li>
-    </ul>
-  </div>-->
- 
   <!-- Main Popup Content -->
   <div class="popup-body">
-    <p id="title">Scan QR code</p>
+    <p id="title">
+      <sometag data-locale="popup_title">Scan QR code</sometag>
+    </p>
 
     <div class="qr shadows-1"></div>
     <input class="inputbar shadows-1" type="text" placeholder="QR Text"><br>
@@ -166,16 +144,6 @@
     </div>
   </div>
 
-  <!-- Unused Share Button Content-->
-  <!--<button class="btn shadows-1" id="buttonShare">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="share-icon" fill="currentColor">
-      <path d="M30.3 13.7 25 8.4l-5.3 5.3-1.4-1.4L25 5.6l6.7 6.7z" />
-      <path d="M24 7h2v21h-2z" />
-      <path
-        d="M35 40H15c-1.7 0-3-1.3-3-3V19c0-1.7 1.3-3 3-3h7v2h-7c-.6 0-1 .4-1 1v18c0 .6.4 1 1 1h20c.6 0 1-.4 1-1V19c0-.6-.4-1-1-1h-7v-2h7c1.7 0 3 1.3 3 3v18c0 1.7-1.3 3-3 3" />
-    </svg>
-  </button>-->
-
   <!-- Success Message -->
   <div id="message" class="shadows-1">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"
@@ -187,7 +155,7 @@
   </div>
 
   <script src="qrcode.min.js"></script>
-  <script src="app.js"></script>
+  <script src="popup.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "LinkQR"
+  },
+  "extDesc": {
+    "message": "Μετατρέπει συνδέσμους ιστού σε κωδικούς QR με το LinkQR"
+  },
+  "commandOpenPopup": {
+    "message": "Ανοίξτε το αναδυόμενο παράθυρο LinkQR"
+  },
+  "popup_title": {
+    "message": "Σάρωση κωδικού QR"
+  }
+}

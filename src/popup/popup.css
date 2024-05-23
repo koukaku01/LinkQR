@@ -225,17 +225,6 @@ body {
   /* Center the icon */
 }
 
-.share-icon {
-  color: var(--button-text-color);
-  margin: 0;
-  padding: 0;
-
-  width: 20px;
-  height: 20px;
-
-  background-color: none;
-}
-
 .actions {
   display: flex;
   flex-direction: row;
@@ -264,64 +253,4 @@ body {
 
   height: 22px;
   width: 22px;
-}
-
-#buttonShare {
-  position: fixed;
-  top: 8px;
-  right: 14px;
-  padding: 0;
-  margin: 0;
-  z-index: 998;
-  padding: 0 0.25em;
-  margin: 0;
-}
-
-
-#shareMenu {
-  width: 180px;
-  height: auto;
-
-  padding: 0;
-  margin: 0 0 6px 0;
-
-  background-color: var(--bg-primary-color);
-  color: var(--text-primary-color);
-
-  font-family: Arial, sans-serif;
-
-  border-radius: 6px;
-  border: var(--button-border-color) 0px solid;
-
-  z-index: 999;
-
-  display: none;
-  /* Initially hide the shareMenu */
-}
-
-#shareMenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#shareMenu ul li {
-  padding: 2px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-#shareMenu ul li:hover {
-  background-color: var(--button-hover-color);
-}
-
-.list-item {
-  display: flex;
-  align-items: center;
-}
-
-.icons-options {
-  margin-right: 5px;
 }
