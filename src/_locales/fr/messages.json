@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "LienQR"
+  },
+  "extDesc": {
+    "message": "Convertit les liens Web en codes QR avec LinkQR"
+  },
+  "commandOpenPopup": {
+    "message": "Ouvrir la fenêtre contextuelle LinkQR"
+  },
+  "popup_title": {
+    "message": "Scanner le code QR"
+  }
+}

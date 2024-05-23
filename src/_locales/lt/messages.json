@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Konvertuoja žiniatinklio nuorodas į QR kodus su LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Atidarykite „LinkQR“ iššokantįjį langą"
+    },
+    "popup_title": {
+        "message": "Nuskaitykite QR kodą"
+    }
+}

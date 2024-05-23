@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "TautanQR"
+    },
+    "extDesc": {
+        "message": "Mengubah tautan web menjadi kode QR dengan LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Buka pop-up LinkQR"
+    },
+    "popup_title": {
+        "message": "Pindai kode QR"
+    }
+}

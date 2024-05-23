@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "ลิงค์QR"
+    },
+    "extDesc": {
+        "message": "แปลงลิงค์เว็บเป็นรหัส QR ด้วย LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "เปิดป๊อปอัป LinkQR"
+    },
+    "popup_title": {
+        "message": "สแกนรหัส QR"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "extName": {
+      "message": "رابطQR"
+    },
+    "extDesc": {
+      "message": "يحول روابط الويب إلى رموز QR باستخدام LinkQR"
+    },
+    "commandOpenPopup": {
+      "message": "افتح نافذة LinkQR المنبثقة"
+    },
+    "popup_title": {
+      "message": "مسح رمز الاستجابة السريعة"
+    }
+  }

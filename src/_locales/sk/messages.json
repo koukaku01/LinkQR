@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Prevádza webové odkazy na QR kódy pomocou LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Otvorte kontextové okno LinkQR"
+    },
+    "popup_title": {
+        "message": "Naskenujte QR kód"
+    }
+}

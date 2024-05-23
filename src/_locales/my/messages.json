@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "LinkQR ဖြင့် ဝဘ်လင့်ခ်များကို QR ကုဒ်များသို့ ပြောင်းပေးသည်။"
+    },
+    "commandOpenPopup": {
+        "message": "LinkQR ပေါ့ပ်အပ်ကိုဖွင့်ပါ။"
+    },
+    "popup_title": {
+        "message": "QR ကုဒ်ကို စကင်န်ဖတ်ပါ။"
+    }
+}

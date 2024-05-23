@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Teisendab LinkQR-iga veebilingid QR-koodideks"
+    },
+    "commandOpenPopup": {
+        "message": "Avage LinkQR-i hüpikaken"
+    },
+    "popup_title": {
+        "message": "Skaneeri QR-kood"
+    }
+}

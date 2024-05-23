@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "LinkQR ഉപയോഗിച്ച് വെബ് ലിങ്കുകളെ QR കോഡുകളിലേക്ക് പരിവർത്തനം ചെയ്യുന്നു"
+    },
+    "commandOpenPopup": {
+        "message": "LinkQR പോപ്പ്അപ്പ് തുറക്കുക"
+    },
+    "popup_title": {
+        "message": "QR കോഡ് സ്കാൻ ചെയ്യുക"
+    }
+}

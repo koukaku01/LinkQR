@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "გარდაქმნის ვებ ბმულებს QR კოდებში LinkQR-ით"
+    },
+    "commandOpenPopup": {
+        "message": "გახსენით LinkQR ამომხტარი ფანჯარა"
+    },
+    "popup_title": {
+        "message": "QR კოდის სკანირება"
+    }
+}

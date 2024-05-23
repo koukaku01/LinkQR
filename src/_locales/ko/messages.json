@@ -1,0 +1,14 @@
+{
+    "extName": {
+      "message": "링크QR"
+    },
+    "extDesc": {
+      "message": "LinkQR을 사용하여 웹 링크를 QR 코드로 변환합니다."
+    },
+    "commandOpenPopup": {
+      "message": "LinkQR 팝업 열기"
+    },
+    "popup_title": {
+      "message": "QR 코드 스캔"
+    }
+  }

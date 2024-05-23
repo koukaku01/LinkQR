@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Muuntaa verkkolinkit QR-koodeiksi LinkQR:n avulla"
+    },
+    "commandOpenPopup": {
+        "message": "Avaa LinkQR-ponnahdusikkuna"
+    },
+    "popup_title": {
+        "message": "Skannaa QR-koodi"
+    }
+}

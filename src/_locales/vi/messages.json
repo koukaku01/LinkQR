@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Chuyển link web thành mã QR bằng LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Mở cửa sổ bật lên LinkQR"
+    },
+    "popup_title": {
+        "message": "Quét mã QR"
+    }
+}

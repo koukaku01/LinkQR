@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extName__",
+  "version": "0.11.0",
+  "description": "__MSG_extDesc__",
+  "default_locale": "en",
+  "author": "xKe00",
+  "homepage_url": "https://github.com/xke00/linkqr/",
+  "icons": {
+    "32": "icons/ext-icon-32.png",
+    "64": "icons/ext-icon-64.png"
+  },
+  "permissions": [
+    "menus",
+    "contextMenus",
+    "activeTab",
+    "tabs",
+    "clipboardWrite"
+  ],
+  "background": {
+    "scripts": [
+      "background/background.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": {
+      "19": "icons/PA-icon-19.png",
+      "38": "icons/PA-icon-38.png"
+    },
+    "default_title": "LinkQR (Alt+Q)",
+    "default_popup": "popup/popup.html"
+  },
+  "commands": {
+    "_execute_page_action": {
+      "suggested_key": {
+        "default": "Alt+Q"
+      },
+      "description": "__MSG_commandOpenPopup__"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "ממיר קישורי אינטרנט לקודי QR עם LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "פתח את החלון הקופץ של LinkQR"
+    },
+    "popup_title": {
+        "message": "סרוק קוד QR"
+      }
+}

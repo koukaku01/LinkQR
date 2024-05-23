@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Web estekak QR kode bihurtzen ditu LinkQR-rekin"
+    },
+    "commandOpenPopup": {
+        "message": "Ireki LinkQR pop-up"
+    },
+    "popup_title": {
+        "message": "Eskaneatu QR kodea"
+    }
+}

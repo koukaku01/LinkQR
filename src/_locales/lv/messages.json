@@ -1,0 +1,14 @@
+{
+    "extName": {
+        "message": "LinkQR"
+    },
+    "extDesc": {
+        "message": "Pārvērš tīmekļa saites par QR kodiem, izmantojot LinkQR"
+    },
+    "commandOpenPopup": {
+        "message": "Atveriet LinkQR uznirstošo logu"
+    },
+    "popup_title": {
+        "message": "Skenējiet QR kodu"
+    }
+}
