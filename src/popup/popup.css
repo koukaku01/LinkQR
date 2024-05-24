@@ -332,7 +332,6 @@ body {
 
 .dropdown-item:hover {
   background-color: var(--button-hover-color);
-  color: rgba(0, 0, 0, 0.85);
 }
 
 .dropdown-item:last-child {
