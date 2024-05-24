@@ -7,13 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Note**: :star: indicate the version whcih has been published to the Firefox Add-ons site.
 
-<hr> 
-
 ## [Unreleased]
 
-<hr> 
-
 ## [Released]
+
+## [0.12.0] - 2024-05-24
+
+### Added
+- **Download Button Enhancement**:
+  - Combined separate PNG and SVG download buttons into a single button with a dropdown selector for format.
+  - Implemented functionality to save user choice of download format into storage.
+
+### Changed
+- **User Interface**:
+  - Made slight improvements to the UI for a better user experience.
+
+### Fixed
+- Minor bug fixes and improvements to enhance stability and performance.
+
+## [0.11.0] - 2024-05-23
+
+### Added
+- **Internationalization (i18n)**:
+  - Added `_locales` directory with localization files for supported languages.
+  - Updated HTML title text to use localized strings, enabling support for multiple languages.
+
+### Changed
+- **Directory Structure**:
+  - Restructured project directory to improve organization and maintainability.
+  - Moved files and directories to align with best practices for extension development.
 
 ##  :star: [0.10.0] 2024-05-12
 
