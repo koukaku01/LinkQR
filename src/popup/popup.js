@@ -1,8 +1,8 @@
 // DOM elements
 const $text = document.querySelector(".inputbar"); // Input field for text
 const $qr = document.querySelector(".qr"); // Container for QR code display
-const $downloadPngBtn = document.getElementById("downloadPngBtn"); // PNG download button
-const $downloadSvgBtn = document.getElementById("downloadSvgBtn"); // SVG download button
+// const $downloadPngBtn = document.getElementById("downloadPngBtn"); // PNG download button
+// const $downloadSvgBtn = document.getElementById("downloadSvgBtn"); // SVG download button
 const $buttonCopy = document.querySelector(".buttonCopy"); // Button to copy QR code PNG image
 const SIZE = 798; // Size of the QR code
 
@@ -40,32 +40,6 @@ function drawQr(text) {
     // Append the parsed SVG document to $qr
     $qr.appendChild(svgDoc.documentElement);
 
-
-
-    // Update PNG download link
-    $downloadPngBtn.addEventListener("click", function () {
-        const pngData = new Blob([qr_svg], { type: "image/png" });
-        const pngUrl = URL.createObjectURL(pngData);
-        const downloadLink = document.createElement("a");
-        downloadLink.href = pngUrl;
-        downloadLink.download = "qr.png";
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-    });
-
-    // Update SVG download link
-    $downloadSvgBtn.addEventListener("click", function () {
-        const svgData = new Blob([qr_svg], { type: "image/svg+xml" });
-        const svgUrl = URL.createObjectURL(svgData);
-        const downloadLink = document.createElement("a");
-        downloadLink.href = svgUrl;
-        downloadLink.download = "qr.svg";
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-    });
-
     // Convert SVG to PNG and update PNG download link
     const qr_png = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="800">${qr}</svg>`;
     const $img = new Image();
@@ -80,6 +54,49 @@ function drawQr(text) {
         $buttonCopy.href = $canvas.toDataURL();
     });
 }
+
+// Function to handle download based on format
+function downloadQRCode(format) {
+    // Get the SVG content of the QR code
+    const qr_svg = $qr.querySelector("svg").outerHTML;
+
+    // Convert SVG to PNG if the format is PNG
+    if (format === "png") {
+        const $canvas = document.createElement("canvas");
+        const ctx = $canvas.getContext("2d");
+        const img = new Image();
+
+        img.onload = function () {
+            $canvas.width = img.width;
+            $canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+
+            // Convert canvas to PNG data URL
+            const pngDataURL = $canvas.toDataURL("image/png");
+
+            // Trigger download of PNG file
+            const downloadLink = document.createElement("a");
+            downloadLink.href = pngDataURL;
+            downloadLink.download = "qr.png";
+            downloadLink.click();
+        };
+
+        img.src = "data:image/svg+xml;base64," + btoa(qr_svg);
+    }
+    // Otherwise, if the format is SVG, directly download the SVG content
+    else if (format === "svg") {
+        const svgData = new Blob([qr_svg], { type: "image/svg+xml" });
+        const svgUrl = URL.createObjectURL(svgData);
+
+        const downloadLink = document.createElement("a");
+        downloadLink.href = svgUrl;
+        downloadLink.download = "qr.svg";
+        downloadLink.click();
+
+        URL.revokeObjectURL(svgUrl);
+    }
+}
+
 
 // Function to copy QR code PNG image to clipboard using WebExtension clipboard API
 async function copyPngToClipboard() {
@@ -147,12 +164,127 @@ console.log = function (message) {
         // Show the message div
         document.getElementById('message').style.display = 'block';
 
-        // Hide the message after 3 seconds
+        // Hide the message after 1.5 seconds
         setTimeout(function () {
             document.getElementById('message').style.display = 'none';
-        }, 1000);
+        }, 1500);
     }
 };
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownContainer = document.querySelector(".dropdown-container");
+    const selector = dropdownContainer.querySelector(".selector");
+    const dropdownMenu = dropdownContainer.querySelector(".dropdown-menu");
+    const dropdownItems = dropdownContainer.querySelectorAll(".dropdown-item");
+    const downloadButton = document.querySelector(".download-button");
+
+    let selectedFormat = localStorage.getItem("selectedFormat") || "png"; // Default selected format
+
+    // Function to trigger download based on format
+    function downloadQRCode(format, qr_svg) {
+        if (format === "png") {
+            const pngData = new Blob([qr_svg], { type: "image/png" });
+            const pngUrl = URL.createObjectURL(pngData);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = pngUrl;
+            downloadLink.download = "qr.png";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        } else if (format === "svg") {
+            const svgData = new Blob([qr_svg], { type: "image/svg+xml" });
+            const svgUrl = URL.createObjectURL(svgData);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = svgUrl;
+            downloadLink.download = "qr.svg";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+    }
+
+    // Function to update download button
+    function updateDownloadButton(format) {
+        selectedFormat = format;
+        localStorage.setItem("selectedFormat", format);
+        downloadButton.innerHTML = `
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;"
+            xml:space="preserve" class="download-icon">
+            <style type="text/css">
+                .st0 {
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-width: 1;
+                    stroke-miterlimit: 10;
+                }
+
+                .st1 {
+                    fill: none;
+                }
+
+                .st2 {
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-width: 1;
+                    stroke-miterlimit: 10;
+                }
+
+                .st3 {
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-width: 1;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 10;
+                }
+
+                .st4 {
+                    fill: none;
+                    stroke: currentColor;
+                    stroke-width: 1;
+                    stroke-linecap: square;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 10;
+                }
+            </style>
+            <g>
+                <polyline class="st4" points="11.879,8.37 8,12.25 4.121,8.37 	" />
+                <path class="st3" d="M14.25,12v2c0,0.69-0.56,1.25-1.25,1.25H3c-0.69,0-1.25-0.56-1.25-1.25v-2" />
+                <line class="st3" x1="8" y1="12.25" x2="8" y2="1" />
+                <rect class="st1" width="16" height="16" />
+            </g>
+        </svg>
+        ${format.toUpperCase()}`;
+    }
+
+
+    // Toggle dropdown menu
+    selector.addEventListener("click", function () {
+        dropdownContainer.classList.toggle("open");
+    });
+
+    // Handle dropdown item selection
+    dropdownItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            const format = this.dataset.format;
+            updateDownloadButton(format);
+            dropdownContainer.classList.remove("open");
+        });
+    });
+
+    // Handle download button click
+    downloadButton.addEventListener("click", function () {
+        // Replace `qr_svg` with your actual SVG QR code variable or data
+        const qr_svg = $qr.querySelector("svg").outerHTML;
+        // Trigger download based on selected format and pass the QR code SVG data
+        downloadQRCode(selectedFormat, qr_svg);
+    });
+
+    // Initialize download button on page load
+    updateDownloadButton(selectedFormat);
+});
 
 // Select all elements with the data-locale attribute
 document.querySelectorAll('[data-locale]').forEach(elem => {
@@ -167,4 +299,3 @@ document.querySelectorAll('[data-locale]').forEach(elem => {
         elem.innerText = translatedText;
     }
 });
-

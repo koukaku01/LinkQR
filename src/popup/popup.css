@@ -22,6 +22,10 @@
   --message-success-color: #D8EEDC;
   --message-success-icon-color: #017A40;
 
+  --blue-alt: #007AFF;
+
+  --border-right-color: rgba(0, 0, 0, 0.1);
+
   /*shadows*/
   --shadows-1: 0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.1), 0px -0.3px 2px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 
@@ -50,6 +54,9 @@
     --message-success-color: #004725;
     --message-success-icon-color: #4DBC87;
 
+    --blue-alt: #0070F5;
+
+    --border-right-color: rgba(255, 255, 255, 0.1);
 
     /*shadows*/
 
@@ -142,14 +149,6 @@ body {
   box-shadow: 0px 0px 0px 3px var(--text-field-focus-border-color);
 }
 
-.actions a {
-  text-decoration: none;
-}
-
-.actions a:focus-visible {
-  text-decoration: none;
-}
-
 #btn-group {
   display: flex;
   flex-direction: row;
@@ -167,7 +166,7 @@ body {
 
   height: 22px;
 
-  padding: 0 0.5em;
+  padding: 0;
   margin: 0;
 
   cursor: pointer;
@@ -203,6 +202,7 @@ body {
   /* Set the color of the SVG */
   margin: 0;
   padding-right: 0.25em;
+  padding-left: 0.25em;
 }
 
 .copy-icon {
@@ -210,6 +210,13 @@ body {
   /* Set the color of the SVG */
   margin: 0;
   padding: 0;
+}
+
+.buttonCopy {
+  background-color: var(--bg-primary-color);
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
 }
 
 .success-icon {
@@ -225,13 +232,6 @@ body {
   /* Center the icon */
 }
 
-.actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 9px;
-}
-
 .shadows-1 {
   box-shadow: var(--shadows-1);
 }
@@ -239,18 +239,144 @@ body {
 #message {
   display: none;
   position: fixed;
-  bottom: 10px;
-  right: 41px;
+  bottom: 9px;
+  right: 2px;
   transform: translateX(-50%);
   background-color: var(--message-success-color);
   padding: 0;
   border-radius: 6px;
   z-index: 9999;
-
   align-items: center;
-
   margin: 0;
+  height: 24px;
+  width: 24px;
+}
 
+.dropdown-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: auto 0px auto 0px;
+  border-radius: 6px;
+}
+
+.selector {
+  cursor: context-menu;
+  font-size: 0.75em;
+  text-align: center;
   height: 22px;
   width: 22px;
+  padding: 0;
+  margin: 0;
+  border-width: 0px;
+  border-style: solid;
+  border-radius: 0px 6px 6px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary-color);
+  transition: background-color 0.3s ease;
+}
+
+.selector:hover {
+  background-color: var(--button-hover-color);
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: var(--bg-primary-color);
+  backdrop-filter: blur(80px);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  bottom: 28px;
+  z-index: 1000;
+  height: 22px;
+}
+
+.dropdown-container.open .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 76px;
+  background-color: var(--bg-primary-color);
+  box-shadow: 0px 7px 22px 0px rgba(0, 0, 0, 0.25), 0px 0px 1.5px 0px rgba(0, 0, 0, 0.3), 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
+  border: 0.1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-item {
+  font-size: 0.75em;
+  text-align: center;
+
+  height: 22px;
+
+  padding: 0 0.5em;
+  margin-left: 3px;
+  margin-right: 3px;
+
+  cursor: pointer;
+
+  border-width: 0px;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  color: var(--button-text-color);
+
+  background-color: transparent;
+}
+
+.dropdown-item:hover {
+  background-color: var(--button-hover-color);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.dropdown-item:last-child {
+  border: none;
+  margin-bottom: 3px;
+}
+
+.dropdown-item:first-child {
+  border: none;
+  margin-top: 3px;
+}
+
+.download-button {
+  padding: auto 9px;
+  margin: 0;
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
+  border-right: 1px solid var(--border-right-color);
+  cursor: pointer;
+
+  font-size: 0.75em;
+  text-align: center;
+
+  flex-wrap: nowrap;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.selector-icon {
+  color: var(--button-text-color);
+  margin: 0;
+  padding: 0;
 }

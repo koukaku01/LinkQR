@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
   "author": "xKe00",
@@ -34,7 +34,8 @@
   "commands": {
     "_execute_page_action": {
       "suggested_key": {
-        "default": "Alt+Q"
+        "default": "Shift+Alt+Q",
+        "linux": "Shift+Alt+Q"
       },
       "description": "__MSG_commandOpenPopup__"
     }
