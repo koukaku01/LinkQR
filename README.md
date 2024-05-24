@@ -19,6 +19,7 @@ LinkQR is a Firefox extension that simplifies the process of converting web link
 
 - [Features](#features)
 - [Install](#install)
+    - [Development and Testing](#development-and-testing)
 - [Usage](#usage)
 	- [Browser address bar button](#browser-address-bar-button)
     - [Right-clicked context menu](#right-clicked-context-menu)
@@ -46,6 +47,15 @@ LinkQR is a Firefox extension that simplifies the process of converting web link
 [![Get the add-on at the Firefox Add-ons site](assets/get-the-add-on.png)](https://addons.mozilla.org/firefox/addon/link-qr/)<br>
 Available on the [Firefox Add-ons site](https://addons.mozilla.org/firefox/addon/link-qr/)
 
+### Development and Testing
+
+To install the LinkQR Firefox extension for development and testing:
+1. Clone or download the source code from the [GitHub repository](https://github.com/xKe00/LinkQR).
+2. Open Firefox and navigate to `about:debugging`.
+3. Click on "This Firefox" in the left sidebar.
+4. Click on "Load Temporary Add-on...".
+5. Navigate to the directory where you cloned or downloaded the extension's source code, and select the `manifest.json` file inside the extension's directory.
+6. Once loaded, the extension should be available for testing and development.
 
 ## Usage
 
@@ -59,7 +69,7 @@ Right-click anywhere on a webpage to access the context menu. You'll find an opt
 
 ### Keyboard shortcuts
 
-- Alt+Q: Open the LinkQR Popup for current webpage.
+- Alt+Shift+Q: Open the LinkQR Popup for current webpage.
 
 
 ## Maintainers
