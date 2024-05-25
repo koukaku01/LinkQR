@@ -28,7 +28,7 @@
       "19": "icons/PA-icon-19.png",
       "38": "icons/PA-icon-38.png"
     },
-    "default_title": "LinkQR (Alt+Q)",
+    "default_title": "LinkQR (Shift+Alt+Q)",
     "default_popup": "popup/popup.html"
   },
   "commands": {
