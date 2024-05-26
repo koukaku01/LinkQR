@@ -25,8 +25,8 @@
   },
   "page_action": {
     "default_icon": {
-      "19": "icons/PA-icon-19.png",
-      "38": "icons/PA-icon-38.png"
+      "19": "icons/PA-icon-19.svg",
+      "38": "icons/PA-icon-38.svg"
     },
     "default_title": "LinkQR (Shift+Alt+Q)",
     "default_popup": "popup/popup.html"
