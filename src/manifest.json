@@ -28,14 +28,14 @@
       "19": "icons/PA-icon-19.svg",
       "38": "icons/PA-icon-38.svg"
     },
-    "default_title": "LinkQR (Shift+Alt+Q)",
+    "default_title": "LinkQR (Ctrl+Alt+Q)",
     "default_popup": "popup/popup.html"
   },
   "commands": {
     "_execute_page_action": {
       "suggested_key": {
-        "default": "Shift+Alt+Q",
-        "linux": "Shift+Alt+Q"
+        "default": "Ctrl+Alt+Q",
+        "linux": "Ctrl+Alt+Q"
       },
       "description": "__MSG_commandOpenPopup__"
     }

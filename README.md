@@ -69,8 +69,7 @@ Right-click anywhere on a webpage to access the context menu. You'll find an opt
 
 ### Keyboard shortcuts
 
-- Alt+Shift+Q: Open the LinkQR Popup for current webpage.
-
+- Ctrl+Alt+Q: Open the LinkQR Popup for current webpage.
 
 ## Maintainers
 
