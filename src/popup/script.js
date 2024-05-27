@@ -1,3 +1,5 @@
+//script.js for js unrelated to qr code
+
 // Select all elements with the data-locale attribute
 document.querySelectorAll('[data-locale]').forEach(elem => {
     // Get the message key from the data-locale attribute
