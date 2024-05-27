@@ -1,8 +1,6 @@
 // DOM elements
 const $text = document.querySelector(".inputbar"); // Input field for text
 const $qr = document.querySelector(".qr"); // Container for QR code display
-// const $downloadPngBtn = document.getElementById("downloadPngBtn"); // PNG download button
-// const $downloadSvgBtn = document.getElementById("downloadSvgBtn"); // SVG download button
 const $buttonCopy = document.querySelector(".buttonCopy"); // Button to copy QR code PNG image
 const SIZE = 798; // Size of the QR code
 
@@ -55,6 +53,34 @@ function drawQr(text) {
     });
 }
 
+// Retrieve URL from the background script and draw the initial QR code
+browser.runtime.sendMessage({ request: "getLinkUrl" }).then((response) => {
+    let url;
+    if (response.linkUrl) {
+        url = response.linkUrl;
+    } else {
+        return browser.tabs.query({ currentWindow: true, active: true });
+    }
+    return Promise.resolve([{ url: url }]);
+}).then((tabInfo) => {
+    const url = tabInfo[0].url;
+    $text.value = url;
+    drawQr(url);
+}).catch(console.error);
+
+// Send a message to the background script to clear the link URL
+browser.runtime.sendMessage({ request: "clearLinkUrl" });
+
+
+// Event listeners
+$text.addEventListener("input", function () {
+    drawQr(this.value);
+});
+
+$text.addEventListener("focus", function () {
+    this.select();
+});
+
 // Function to handle download based on format
 function downloadQRCode(format) {
     // Get the SVG content of the QR code
@@ -97,7 +123,6 @@ function downloadQRCode(format) {
     }
 }
 
-
 // Function to copy QR code PNG image to clipboard using WebExtension clipboard API
 async function copyPngToClipboard() {
     try {
@@ -125,13 +150,7 @@ $buttonCopy.addEventListener("click", function () {
     copyPngToClipboard();
 });
 
-// Retrieve URL and draw initial QR code
-browser.tabs.query({ currentWindow: true, active: true })
-    .then(function onGot(tabInfo) {
-        const url = tabInfo[0].url;
-        $text.value = url;
-        drawQr(url);
-    }, console.log);
+
 
 // Event listeners
 $text.addEventListener("input", function () {
@@ -140,21 +159,6 @@ $text.addEventListener("input", function () {
 
 $text.addEventListener("focus", function () {
     this.select();
-});
-
-// This script disables the default zoom behavior in the popup body when the Ctrl key is pressed during scrolling
-document.addEventListener('DOMContentLoaded', function () {
-    // Select the popup body element
-    var popupBody = document.querySelector('.popup-body');
-
-    // Add a wheel event listener to the popup body
-    popupBody.addEventListener('wheel', function (event) {
-        // Check if the Ctrl key is pressed
-        if (event.ctrlKey) {
-            // If Ctrl key is pressed, prevent the default zoom behavior
-            event.preventDefault();
-        }
-    });
 });
 
 // Listen for console log event
@@ -171,8 +175,7 @@ console.log = function (message) {
     }
 };
 
-
-
+// Handle download and selector for formats
 document.addEventListener("DOMContentLoaded", function () {
     const dropdownContainer = document.querySelector(".dropdown-container");
     const selector = dropdownContainer.querySelector(".selector");
@@ -205,59 +208,84 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to update download button
-    function updateDownloadButton(format) {
-        selectedFormat = format;
-        localStorage.setItem("selectedFormat", format);
-        downloadButton.innerHTML = `
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;"
-            xml:space="preserve" class="download-icon">
-            <style type="text/css">
-                .st0 {
-                    fill: none;
-                    stroke: currentColor;
-                    stroke-width: 1;
-                    stroke-miterlimit: 10;
-                }
-
-                .st1 {
-                    fill: none;
-                }
-
-                .st2 {
-                    fill: none;
-                    stroke: currentColor;
-                    stroke-width: 1;
-                    stroke-miterlimit: 10;
-                }
-
-                .st3 {
-                    fill: none;
-                    stroke: currentColor;
-                    stroke-width: 1;
-                    stroke-linejoin: round;
-                    stroke-miterlimit: 10;
-                }
-
-                .st4 {
-                    fill: none;
-                    stroke: currentColor;
-                    stroke-width: 1;
-                    stroke-linecap: square;
-                    stroke-linejoin: round;
-                    stroke-miterlimit: 10;
-                }
-            </style>
-            <g>
-                <polyline class="st4" points="11.879,8.37 8,12.25 4.121,8.37 	" />
-                <path class="st3" d="M14.25,12v2c0,0.69-0.56,1.25-1.25,1.25H3c-0.69,0-1.25-0.56-1.25-1.25v-2" />
-                <line class="st3" x1="8" y1="12.25" x2="8" y2="1" />
-                <rect class="st1" width="16" height="16" />
-            </g>
-        </svg>
-        ${format.toUpperCase()}`;
+// Function to update download button
+function updateDownloadButton(format) {
+    selectedFormat = format;
+    localStorage.setItem("selectedFormat", format);
+    
+    // Clear existing content
+    while (downloadButton.firstChild) {
+        downloadButton.removeChild(downloadButton.firstChild);
     }
+    
+    // Create SVG element
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("version", "1.1");
+    svg.setAttribute("id", "Layer_1");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+    svg.setAttribute("x", "0px");
+    svg.setAttribute("y", "0px");
+    svg.setAttribute("width", "16px");
+    svg.setAttribute("height", "16px");
+    svg.setAttribute("viewBox", "0 0 16 16");
+    svg.setAttribute("style", "enable-background:new 0 0 16 16;");
+    svg.setAttribute("xml:space", "preserve");
+    svg.setAttribute("class", "download-icon");
+
+    // Define SVG content
+    svg.innerHTML = `
+        <style type="text/css">
+        .st0 {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1;
+            stroke-miterlimit: 10;
+          }
+
+          .st1 {
+            fill: none;
+          }
+
+          .st2 {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1;
+            stroke-miterlimit: 10;
+          }
+
+          .st3 {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+          }
+
+          .st4 {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1;
+            stroke-linecap: square;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+          }
+        </style>
+        <g>
+          <polyline class="st4" points="11.879,8.37 8,12.25 4.121,8.37 	" />
+          <path class="st3" d="M14.25,12v2c0,0.69-0.56,1.25-1.25,1.25H3c-0.69,0-1.25-0.56-1.25-1.25v-2" />
+          <line class="st3" x1="8" y1="12.25" x2="8" y2="1" />
+          <rect class="st1" width="16" height="16" />
+        </g>
+    `;
+    
+    // Append SVG to downloadButton
+    downloadButton.appendChild(svg);
+
+    // Append text content
+    downloadButton.appendChild(document.createTextNode(format.toUpperCase()));
+}
+
 
 
     // Toggle dropdown menu
@@ -284,18 +312,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize download button on page load
     updateDownloadButton(selectedFormat);
-});
-
-// Select all elements with the data-locale attribute
-document.querySelectorAll('[data-locale]').forEach(elem => {
-    // Get the message key from the data-locale attribute
-    let messageKey = elem.dataset.locale;
-
-    // Retrieve the localized message using the message key
-    let translatedText = browser.i18n.getMessage(messageKey);
-
-    // If a localized message is found, set it as the element's inner text
-    if (translatedText) {
-        elem.innerText = translatedText;
-    }
 });

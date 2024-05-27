@@ -11,6 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Released]
 
+##  :star: [0.13.0] - 2024-05-27
+
+### Added
+- **Context Menu Option for Links**:
+  - Generate QR code from links
+  
+### Security
+- Refactored the updateDownloadButton function in popup.js to dynamically create SVG elements instead of setting innerHTML.
+- Addressed the warning "Unsafe assignment to innerHTML" by adopting a safer approach to manipulate the DOM.
+  
+### Fixed
+- Minor bug fixes and improvements to enhance stability and performance.
+
 ## [0.12.0] - 2024-05-24
 
 ### Added

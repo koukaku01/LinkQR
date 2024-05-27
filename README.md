@@ -2,7 +2,7 @@
     <img src="src/icons/ext-icon-64.png" alt="LinkQR icon">
     <h1>LinkQR</h1>
 	
-[![Extension Version](https://img.shields.io/badge/Version-0.12.1-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![Extension Version](https://img.shields.io/badge/Version-0.13.0-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 [Changelog](./CHANGELOG.md)
 
@@ -22,7 +22,7 @@ LinkQR is a Firefox extension that simplifies the process of converting web link
     - [Development and Testing](#development-and-testing)
 - [Usage](#usage)
 	- [Browser address bar button](#browser-address-bar-button)
-    - [Right-clicked context menu](#right-clicked-context-menu)
+    - [Context Menu Options](#context-menu-options)
     - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
@@ -37,10 +37,12 @@ LinkQR is a Firefox extension that simplifies the process of converting web link
 - [x] Offline support
 - [x] Automatically adapts to user's Firefox theme (light or dark)
 - [x] Ability to copy QR code as PNG
-- [x] Right-click context menu to generate QR code
+- [x] Right-click context menu to generate QR code for current tab
+- [x] Right-click context menu to generate QR code for links
+
 
 ### TODO
-- [ ] Right-click context menu to generate QR code for links
+- [ ] Enable HTTPS for All windows, with options to disable 
 
 ## Install
 
@@ -59,15 +61,21 @@ To install the LinkQR Firefox extension for development and testing:
 
 ## Usage
 
-### Browser address bar button
+### Browser Address Bar Button
 
-Click the button located to the right of the browser's address bar to open up the popup which contains the QR Code of the current webpage, with options to download or copy.
+Click the button next to the browser's address bar to instantly reveal the QR Code for the current webpage. You'll have the option to download or copy the code with ease.
 
-### Right-clicked context menu
+### Context Menu Options
 
-Right-click anywhere on a webpage to access the context menu. You'll find an option labeled "Open LinkQR" in the menu. Click on it to open the popup containing the QR Code of the current webpage
+#### Webpage Context Menu:
 
-### Keyboard shortcuts
+Right-click anywhere on a webpage to access the context menu. Look for "Open LinkQR" and click to reveal the QR Code of the current webpage.
+
+#### Link Context Menu:
+
+Right-click on a link to access the context menu. Choose "Generate LinkQR Code" to reveal the QR Code for the selected link.
+
+### Keyboard Shortcuts
 
 - Ctrl+Alt+Q: Open the LinkQR Popup for current webpage.
 
