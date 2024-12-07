@@ -9,7 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
 ## [Released]
+
+##  :star: [0.14.0] - 2024-12-07
+### Added
+- **New Tab QR Code Display**:
+  - Added a button on `popup.html` to open the generated QR code in a new tab.
+  - Enabled users to add a description alongside the QR code.
+  - Introduced a font size slider for customizing the description text.
+  - Implemented functionality to dynamically edit the QR code in the new tab.
+
+### Changed
+- Resolved minor UI inconsistencies in the popup for better alignment and visibility.
 
 ##  :star: [0.13.0] - 2024-05-27
 

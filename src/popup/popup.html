@@ -9,31 +9,59 @@
 </head>
 
 <body>
-  <!-- Main Popup Content -->
+  <!-- Main Container for Popup Content -->
   <div class="popup-body">
-    <p id="title">
-      <sometag data-locale="popup_title">Scan QR code</sometag>
-    </p>
+    <!-- Top Section: Title and Buttons -->
+    <div class="top-group">
+      <!-- Invisible Button: Placeholder for Alignment -->
+      <button class="btn invisible"></button>
 
+      <!-- Title Section -->
+      <p id="title">
+        <!-- Localized Title Content -->
+        <sometag data-locale="popup_title">Scan QR code</sometag>
+      </p>
+
+      <!-- Open in New Tab Button -->
+      <button class="newTab-btn" id="logButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-app-window">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <path d="M2 8h20" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- QR Code Display Section -->
     <div class="qr shadows-1"></div>
-    <input class="inputbar shadows-1" type="text" placeholder="QR Text"><br>
 
-    <!-- _____Buttons -->
+    <!-- Input Field for QR Text -->
+    <input class="inputbar" type="text" placeholder="text" id="inputbar"><br>
+
+    <!-- Button Group for Actions -->
     <div id="btn-group">
-      <div class="dropdown-container shadows-1">
-        <button class="download-button">
-          PNG</button>
+      <!-- Dropdown for Download Format -->
+      <div class="dropdown-container">
+        <!-- Default Button -->
+        <button class="download-button">PNG</button>
+
+        <!-- Dropdown Icon -->
         <div class="selector">
           <div class="selector-icon">&#9660;</div>
         </div>
+
+        <!-- Dropdown Menu -->
         <div class="dropdown-menu shadows-1">
+          <!-- PNG Format Option -->
           <button class="dropdown-item" data-format="png">PNG</button>
+          <!-- SVG Format Option -->
           <button class="dropdown-item" data-format="svg">SVG</button>
         </div>
       </div>
 
-      <button class="buttonCopy shadows-1">
-
+      <!-- Copy Button -->
+      <button class="buttonCopy">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
           class="copy-icon">
           <g clip-path="url(#clip0_8_59)">
@@ -55,9 +83,9 @@
     </div>
   </div>
 
-  <!-- Success Message -->
+  <!-- Success Message (Hidden by Default) -->
   <div id="message">
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24"
       stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
       class="success-icon">
       <path fill="currentColor" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18" />
@@ -65,8 +93,10 @@
     </svg>
   </div>
 
+  <!-- JavaScript Files -->
   <script src="qrcode.min.js"></script>
   <script src="popup.js"></script>
+  <script src="moveToNewTab.js"></script>
   <script src="script.js"></script>
 </body>
 

@@ -1,57 +1,96 @@
+// Variable to store the URL of a link when "Generate LinkQR code" is used
 let linkUrl = null;
 
-// Listen for tab updates
+/* 
+  Event Listener: Tabs Updated
+  Triggered whenever a tab is updated (e.g., loaded, refreshed).
+  Ensures the page action (icon in the address bar) is visible on every tab.
+*/
 browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  // Show the page action on every tab
-  browser.pageAction.show(tabId);
+  browser.pageAction.show(tabId); // Display the page action icon
 });
 
-// Listen for tab switching
+/* 
+  Event Listener: Tab Activated
+  Triggered whenever the user switches to a different tab.
+  Ensures the page action is visible on the active tab.
+*/
 browser.tabs.onActivated.addListener(activeInfo => {
-  // Get the current active tab
+  // Fetch the active tab's details
   browser.tabs.get(activeInfo.tabId).then(tab => {
-    // Show the page action on the active tab
-    browser.pageAction.show(tab.id);
+    browser.pageAction.show(tab.id); // Display the page action icon
   });
 });
 
-// Create a browser menu item with id "open-popup"
+/* 
+  Context Menu Item: Open LinkQR
+  Adds a menu item to the context menu (right-click menu) on any page.
+  Used to open the LinkQR popup directly from the page.
+*/
 browser.menus.create({
   id: "open-popup",
   title: "Open LinkQR",
-  contexts: ["page"]
+  contexts: ["page"] // Context: Visible when right-clicking on the page
 });
 
-// Create a browser menu item with id "open-popup-from-link"
+/* 
+  Context Menu Item: Generate LinkQR Code
+  Adds a menu item to the context menu (right-click menu) for links.
+  Used to generate a QR code for the specific link.
+*/
 browser.menus.create({
   id: "open-popup-from-link",
   title: "Generate LinkQR code",
-  contexts: ["link"]
+  contexts: ["link"] // Context: Visible when right-clicking on a link
 });
 
-// Add a listener for when the menu item is clicked
+/* 
+  Event Listener: Context Menu Click
+  Triggered when a context menu item is clicked.
+  Handles actions based on the selected menu item.
+*/
 browser.menus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === "open-popup") {
-    linkUrl = null; // Clear the link URL
-    // Show the page action for the current tab
-    browser.pageAction.show(tab.id);
-    // Open the page action popup
-    browser.pageAction.openPopup();
+    linkUrl = null; // Clear any previously stored link URL
+    browser.pageAction.show(tab.id); // Ensure the page action icon is visible
+    browser.pageAction.openPopup(); // Open the page action popup
   } else if (info.menuItemId === "open-popup-from-link") {
-    linkUrl = info.linkUrl; // Store the link URL
-    console.log('FROM-LINK: ' + linkUrl);
-    // Show the page action for the current tab
-    browser.pageAction.show(tab.id);
-    // Open the page action popup
-    browser.pageAction.openPopup();
+    linkUrl = info.linkUrl; // Store the clicked link's URL
+    console.log('FROM-LINK: ' + linkUrl); // Log the link URL for debugging
+    browser.pageAction.show(tab.id); // Ensure the page action icon is visible
+    browser.pageAction.openPopup(); // Open the page action popup
   }
 });
 
-// Listen for messages from the popup script
+/* 
+  Event Listener: Runtime Messages
+  Listens for messages sent from other parts of the extension (e.g., popup scripts).
+  Responds to requests for link URLs or clears stored data.
+*/
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.request === "getLinkUrl") {
+    // Respond with the currently stored link URL
     sendResponse({ linkUrl: linkUrl });
   } else if (message.request === "clearLinkUrl") {
-    linkUrl = null; // Clear the link URL
+    // Clear the stored link URL
+    linkUrl = null;
+  }
+});
+
+/* 
+  Input Bar Value Logging
+  Stores and retrieves the value of the input bar for debugging or further actions.
+*/
+let inputValue = null;
+
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.inputValue) {
+    inputValue = message.inputValue; // Store the input value
+    console.log("Received input value:", inputValue); // Log the input value for debugging
+  } else if (message.request === "getInputValue") {
+    // Respond with the stored input value
+    sendResponse({ inputValue: inputValue });
+    inputValue = null; // Clear the stored input value
+    console.log("Input value cleared after responding.");
   }
 });

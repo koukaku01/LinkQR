@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkQR Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Left Section for QR Code -->
+        <div class="left-div">
+            <div class="qr"></div>
+        </div>
+
+        <!-- Right Section for User Interaction -->
+        <div class="right-div">
+            <!-- Textarea for User Description -->
+            <textarea class="userDesc" id="dynamic-textarea" placeholder="Write description here"></textarea><br>
+
+            <!-- Slider for Font Size Adjustment -->
+            <div class="slider-container">
+                <label for="font-size-slider">Font Size</label>
+                <input type="range" id="font-size-slider" min="18" max="32" value="24">
+            </div>
+
+            <!-- Input for QR Text -->
+            <input class="urlBar" type="text" placeholder="QR Text" id="urlBar">
+
+            <!-- Footer Section -->
+            <p>LinkQR</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="qrcode.min.js"></script>
+    <script src="newTabPage.js"></script>
+</body>
+
+</html>

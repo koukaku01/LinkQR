@@ -12,7 +12,7 @@ function drawQr(text) {
 
     // Generate SVG QR code
     const qr = new QRCode({
-        content: text || "Hi :)", // Text content
+        content: text || "https://www.youtube.com/watch?v=FtutLA63Cp8", // Text content
         padding: 0, // Padding around the QR code
         color: fg, // QR code color
         background: bg, // QR code background color
@@ -208,33 +208,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-// Function to update download button
-function updateDownloadButton(format) {
-    selectedFormat = format;
-    localStorage.setItem("selectedFormat", format);
-    
-    // Clear existing content
-    while (downloadButton.firstChild) {
-        downloadButton.removeChild(downloadButton.firstChild);
-    }
-    
-    // Create SVG element
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("version", "1.1");
-    svg.setAttribute("id", "Layer_1");
-    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
-    svg.setAttribute("x", "0px");
-    svg.setAttribute("y", "0px");
-    svg.setAttribute("width", "16px");
-    svg.setAttribute("height", "16px");
-    svg.setAttribute("viewBox", "0 0 16 16");
-    svg.setAttribute("style", "enable-background:new 0 0 16 16;");
-    svg.setAttribute("xml:space", "preserve");
-    svg.setAttribute("class", "download-icon");
+    // Function to update download button
+    function updateDownloadButton(format) {
+        selectedFormat = format;
+        localStorage.setItem("selectedFormat", format);
 
-    // Define SVG content
-    svg.innerHTML = `
+        // Clear existing content
+        while (downloadButton.firstChild) {
+            downloadButton.removeChild(downloadButton.firstChild);
+        }
+
+        // Create SVG element
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("version", "1.1");
+        svg.setAttribute("id", "Layer_1");
+        svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+        svg.setAttribute("x", "0px");
+        svg.setAttribute("y", "0px");
+        svg.setAttribute("width", "16px");
+        svg.setAttribute("height", "16px");
+        svg.setAttribute("viewBox", "0 0 16 16");
+        svg.setAttribute("style", "enable-background:new 0 0 16 16;");
+        svg.setAttribute("xml:space", "preserve");
+        svg.setAttribute("class", "download-icon");
+
+        // Define SVG content
+        svg.innerHTML = `
         <style type="text/css">
         .st0 {
             fill: none;
@@ -278,13 +278,13 @@ function updateDownloadButton(format) {
           <rect class="st1" width="16" height="16" />
         </g>
     `;
-    
-    // Append SVG to downloadButton
-    downloadButton.appendChild(svg);
 
-    // Append text content
-    downloadButton.appendChild(document.createTextNode(format.toUpperCase()));
-}
+        // Append SVG to downloadButton
+        downloadButton.appendChild(svg);
+
+        // Append text content
+        downloadButton.appendChild(document.createTextNode(format.toUpperCase()));
+    }
 
 
 
@@ -313,3 +313,4 @@ function updateDownloadButton(format) {
     // Initialize download button on page load
     updateDownloadButton(selectedFormat);
 });
+

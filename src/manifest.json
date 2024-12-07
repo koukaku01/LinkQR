@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "__MSG_extDesc__",
   "default_locale": "en",
-  "author": "xKe00",
-  "homepage_url": "https://github.com/xke00/linkqr/",
+  "author": "koukaku01",
+  "homepage_url": "https://github.com/koukaku01/linkqr/",
   "icons": {
     "32": "icons/ext-icon-32.png",
     "64": "icons/ext-icon-64.png"
