@@ -2,7 +2,7 @@
     <img src="src/icons/ext-icon-64.png" alt="LinkQR icon">
     <h1>LinkQR</h1>
 	
-[![Extension Version](https://img.shields.io/badge/Version-0.14.0-blue)](https://github.com/xKe00/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![Extension Version](https://img.shields.io/badge/Version-0.14.0-blue)](https://github.com/koukaku01/LinkQR/blob/main/manifest.json) [![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 [Changelog](./CHANGELOG.md)
 
@@ -55,7 +55,7 @@ Available on the [Firefox Add-ons site](https://addons.mozilla.org/firefox/addon
 ### Development and Testing
 
 To install the LinkQR Firefox extension for development and testing:
-1. Clone or download the source code from the [GitHub repository](https://github.com/xKe00/LinkQR).
+1. Clone or download the source code from the [GitHub repository](https://github.com/koukaku01/LinkQR).
 2. Open Firefox and navigate to `about:debugging`.
 3. Click on "This Firefox" in the left sidebar.
 4. Click on "Load Temporary Add-on...".
@@ -84,11 +84,11 @@ Right-click on a link to access the context menu. Choose "Generate LinkQR Code" 
 
 ## Maintainers
 
-[@xKe00](https://github.com/xKe00).
+[@koukaku01](https://github.com/koukaku01).
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/xKe00/LinkQR/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/koukaku01/LinkQR/issues/new) or submit PRs.
 
 LinkQR follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
 
@@ -98,6 +98,6 @@ LinkQR follows the [Contributor Covenant](http://contributor-covenant.org/versio
 
 ## License
 
-[LinkQR](https://github.com/xKe00/LinkQR) Copyright &#169; 2024 [xKe00](https://github.com/xKe00).
+[LinkQR](https://github.com/koukaku01/LinkQR) Copyright &#169; 2024 [koukaku01](https://github.com/koukaku01).
 
 This project is licensed under the GNU General Public License v3.0 - see [LICENSE](LICENSE) for more information.
